@@ -11,7 +11,6 @@ import {
   faEllipsisVertical,
   faQuestion,
   faFont,
-  faCloudArrowUp,
   faCoins,
   faGear,
   faSignOut,
@@ -23,15 +22,10 @@ import { Wrapper as WrapperPopper } from '../../../Popper';
 import AccountItem from '../../../AccountItem';
 import Button from '../../../Button';
 import Menu from '../../../Popper/Menu';
-import {
-  faBookmark,
-  faEnvelope,
-  faKeyboard,
-  faLightbulb,
-  faMoon,
-  faPaperPlane,
-  faUser,
-} from '@fortawesome/free-regular-svg-icons';
+import { faBookmark, faKeyboard, faLightbulb, faMoon, faUser } from '@fortawesome/free-regular-svg-icons';
+import { MessageIcon, NotificationIcon, UploadIcon } from '../../../Icons';
+import Image from '../../../Images';
+
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -85,7 +79,7 @@ function Header() {
     console.log(item);
   };
 
-  const hasUser = false;
+  const hasUser = true;
 
   const userMenuItems = hasUser
     ? [
@@ -168,17 +162,17 @@ function Header() {
             <>
               <Tippy content="upload">
                 <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faCloudArrowUp}></FontAwesomeIcon>
+                  <UploadIcon />
                 </button>
               </Tippy>
               <Tippy content="message">
                 <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faPaperPlane}></FontAwesomeIcon>
+                  <MessageIcon />
                 </button>
               </Tippy>
               <Tippy content="notification">
                 <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
+                  <NotificationIcon />
                 </button>
               </Tippy>
             </>
@@ -191,10 +185,11 @@ function Header() {
           )}
           <Menu items={userMenuItems} onChange={handleChange}>
             {hasUser ? (
-              <img
+              <Image
                 className={cx('user-avatar')}
                 src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/3848451234d884288ad608b9db789b8f.jpeg?lk3s=a5d48078&x-expires=1715702400&x-signature=CR2mciOD%2BS6%2BJ0oCDtYi6kYWf8M%3D"
                 alt="Tran Van Ngan"
+                fallback="https://yt3.ggpht.com/1ohqvhusGW6RF17Fe1aRVnaIObQf6oPWKJAk4WI0QGgDQ9V-hNKnEBelfddKRyPwL6vbkEIK=s88-c-k-c0x00ffffff-no-rj"
               />
             ) : (
               <button className={cx('btn-more')}>
