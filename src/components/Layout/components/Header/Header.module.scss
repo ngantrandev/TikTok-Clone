@@ -10,6 +10,7 @@
 .inner {
   height: 100%;
   width: var(--default-layout-width);
+  padding: 0 var(--default-layout-horizontal-spacer);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,7 +21,7 @@
 
 .search,
 .search-result {
-  width: 361px;
+  width: 500px;
 }
 
 .search-title {
@@ -89,4 +90,30 @@
 }
 
 .action {
+  display: flex;
+  align-items: center;
+}
+
+.action-btn {
+  font-size: 2.4rem;
+  color: #161823;
+  cursor: pointer;
+  padding: 4px 12px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+.btn-more {
+  font-size: 2rem;
+  margin-left: 24px;
+  background-color: transparent;
+  padding: 8px;
+  cursor: pointer;
 }
