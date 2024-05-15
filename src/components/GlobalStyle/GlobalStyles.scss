@@ -10,6 +10,7 @@
   --default-layout-header-height: 60px;
   --default-layout-width: 100%;
   --default-layout-horizontal-spacer: 24px;
+  --search-input-width-homepage: 500px;
 }
 
 * {
@@ -72,6 +73,5 @@ body {
 
   .tippy-arrow {
     color: rgba(84, 84, 84, 0.92);
-    
   }
 }
