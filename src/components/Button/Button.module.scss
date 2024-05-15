@@ -22,7 +22,9 @@
   }
 }
 
-.primary, .outlined, .rounded {
+.primary,
+.outlined,
+.rounded {
   justify-content: center;
 }
 
@@ -48,7 +50,7 @@
   background: none rgb(255, 255, 255);
   outline: none;
   color: rgba(22, 24, 35, 0.75);
-  font-family: 'IBM Plex Sans', TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;
+  font-family: var(--font-family);
   font-weight: 700;
   font-size: 14px;
   position: relative;
@@ -80,14 +82,13 @@
   padding: 14px 16px;
 }
 
-
 .icon + .title,
 .title + .icon {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 .icon {
-    display: inline-block;
-    width: 24px;
-    text-align: center;
+  display: inline-block;
+  width: 24px;
+  text-align: center;
 }

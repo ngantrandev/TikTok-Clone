@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical, faQuestion, faFont, faCoins, faGear, faSignOut } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,6 +14,7 @@ import { faBookmark, faKeyboard, faLightbulb, faMoon, faUser } from '@fortawesom
 import { MessageIcon, NotificationIcon, UploadIcon } from '../../../Icons';
 import Image from '../../../Images';
 import Search from '../Search';
+import routeConfigs from '../../../../configs/routes';
 
 const cx = classNames.bind(styles);
 
@@ -41,17 +43,16 @@ const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faQuestion} />,
     title: 'Phản hồi và trợ giúp',
-    to: '/report',
+    to: routeConfigs.report,
   },
   {
     icon: <FontAwesomeIcon icon={faKeyboard} />,
     title: 'Phím tắt trên bàn phím',
-    to: '/shotcut',
+    to: routeConfigs.shotcut,
   },
   {
     icon: <FontAwesomeIcon icon={faMoon} />,
     title: 'Chế độ tối',
-    // to: '/language',
   },
 ];
 
@@ -67,33 +68,33 @@ function Header() {
         {
           icon: <FontAwesomeIcon icon={faUser} />,
           title: 'Xem hồ sơ',
-          to: '/profile',
+          to: routeConfigs.profile,
         },
         {
           icon: <FontAwesomeIcon icon={faBookmark} />,
           title: 'Yêu thích',
-          to: '/like',
+          to: routeConfigs.like,
         },
         {
           icon: <FontAwesomeIcon icon={faCoins} />,
           title: 'Nhận xu',
-          to: '/coin',
+          to: routeConfigs.coin,
         },
         {
           icon: <img src={images.stream} alt="" />,
           title: 'LIVE Studio',
-          to: '/live',
+          to: routeConfigs.live,
         },
         {
           icon: <FontAwesomeIcon icon={faGear} />,
           title: 'Cài đặt',
-          to: '/settings',
+          to: routeConfigs.settings,
         },
         ...MENU_ITEMS,
         {
           icon: <FontAwesomeIcon icon={faSignOut} />,
           title: 'Đăng xuất',
-          to: '/logout',
+          to: routeConfigs.logout,
           separate: true,
         },
       ]
@@ -103,7 +104,9 @@ function Header() {
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('logo')}>
-          <img src={images.logo} alt="Tiktok logo" />
+          <Link to={routeConfigs.home}>
+            <img src={images.logo} alt="Tiktok logo" />
+          </Link>
         </div>
 
         <Search />
@@ -129,7 +132,7 @@ function Header() {
             </>
           ) : (
             <>
-              <Button primary to="/login" target="blank">
+              <Button primary to={routeConfigs.login} target="blank">
                 Log in
               </Button>
             </>
