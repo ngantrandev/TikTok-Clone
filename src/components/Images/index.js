@@ -10,7 +10,7 @@ const Image = forwardRef(({ src, alt, fallback, ...props }, ref) => {
     } else {
       setFallback(images.defaultImage);
     }
-    console.log(fallback);
+    // console.log(fallback);
   };
   return <img ref={ref} src={_fallback || src} alt={alt} {...props} onError={handleError} />;
 });

@@ -7,8 +7,10 @@ import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-s
 
 import { Wrapper as WrapperPopper } from '../../../Popper';
 import AccountItem from '../../../AccountItem';
-
 import styles from './Search.module.scss';
+import { useDebounce as useDebounce } from '../../../../hooks';
+import * as searchService from '../../../../apiServices/searchService';
+
 const cx = classNames.bind(styles);
 
 function Search() {
@@ -16,25 +18,27 @@ function Search() {
   const [searchInputValue, setSearchInputValue] = useState('');
   const [isFocusInput, setIsFocusInput] = useState(true);
   const [isSearching, setIsSearching] = useState(false);
+  const debouncedValue = useDebounce(searchInputValue, 500);
 
   const inputRef = useRef();
 
   useEffect(() => {
-    if (searchInputValue.trim().length === 0) {
+    if (debouncedValue.trim().length === 0) {
       setSearchResult([]);
       return;
     }
 
     setIsSearching(true);
 
-    fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchInputValue)}&type=less`)
-      .then((res) => res.json())
-      .then((res) => {
-        setIsSearching(false);
+    const fetchApi = async () => {
+      const res = await searchService.searchUsers(debouncedValue);
+      console.log(res);
+      setSearchResult(res);
+      setIsSearching(false);
+    };
 
-        setSearchResult(res.data);
-      });
-  }, [searchInputValue]);
+    fetchApi();
+  }, [debouncedValue]);
 
   const handleClickOutside = () => {
     console.log('click outside');
