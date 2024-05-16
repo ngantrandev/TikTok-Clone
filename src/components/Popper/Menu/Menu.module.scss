@@ -1,6 +1,10 @@
 // menu-wrapper
 .menu-items {
+  margin-top: 8px;
+
   min-width: 224px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 12px;
+  overflow: hidden;
   .menu-item {
     margin-left: 0;
   }
@@ -9,7 +13,16 @@
 .menu-popper {
   display: flex;
   flex-direction: column;
+
   padding-bottom: 8px;
+}
+
+.menu-body {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 8px;
+
+  overflow-y: overlay;
 }
 
 .menu-item {
@@ -27,6 +40,8 @@
 
 // header
 .header {
+  flex-shrink: 0;
+  margin-top: -8px;
   position: relative;
   height: 50px;
 }

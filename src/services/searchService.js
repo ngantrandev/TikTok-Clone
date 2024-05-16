@@ -1,8 +1,8 @@
-import * as request from '../ultil/request';
+import * as httpRequest from '../ultil/httpRequest';
 
 const searchUsers = async (q, type = 'less') => {
   try {
-    const res = await request.get(`users/search`, {
+    const res = await httpRequest.get(`users/search`, {
       params: {
         q: q,
         type: type,

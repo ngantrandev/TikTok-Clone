@@ -6,18 +6,18 @@ import Upload from '../components/pages/Upload';
 import Search from '../components/pages/Search';
 
 // config
-import routeConfigs from '../configs/routes';
+import configs from '../configs';
 
 // layouts
-import { HeaderOnly } from '../components/Layout';
+import { HeaderOnly } from '../layouts';
 
 const publicRoutes = [
-  { path: routeConfigs.home, component: Home },
+  { path: configs.routes.home, component: Home },
   { path: '/home', component: Home },
-  { path: routeConfigs.following, component: Fowllowing },
-  { path: routeConfigs.profile, component: Profile },
-  { path: routeConfigs.upload, component: Upload, layout: HeaderOnly },
-  { path: routeConfigs.search, component: Search, layout: null },
+  { path: configs.routes.following, component: Fowllowing },
+  { path: configs.routes.profile, component: Profile },
+  { path: configs.routes.upload, component: Upload, layout: HeaderOnly },
+  { path: configs.routes.search, component: Search, layout: null },
 ];
 
 const privateRoutes = [];

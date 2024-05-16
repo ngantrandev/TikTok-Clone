@@ -7,14 +7,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical, faQuestion, faFont, faCoins, faGear, faSignOut } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Header.module.scss';
-import images from '../../../../assets/images/';
-import Button from '../../../Button';
-import Menu from '../../../Popper/Menu';
+import images from '../../../assets/images';
+import Button from '../../../components/Button';
+import Menu from '../../../components/Popper/Menu';
 import { faBookmark, faKeyboard, faLightbulb, faMoon, faUser } from '@fortawesome/free-regular-svg-icons';
-import { MessageIcon, NotificationIcon, UploadIcon } from '../../../Icons';
-import Image from '../../../Images';
+import { MessageIcon, NotificationIcon, UploadIcon } from '../../../components/Icons';
+import Image from '../../../components/Images';
 import Search from '../Search';
-import routeConfigs from '../../../../configs/routes';
+import configs from '../../../configs/';
 
 const cx = classNames.bind(styles);
 
@@ -43,12 +43,12 @@ const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faQuestion} />,
     title: 'Phản hồi và trợ giúp',
-    to: routeConfigs.report,
+    to: configs.routes.report,
   },
   {
     icon: <FontAwesomeIcon icon={faKeyboard} />,
     title: 'Phím tắt trên bàn phím',
-    to: routeConfigs.shotcut,
+    to: configs.routes.shotcut,
   },
   {
     icon: <FontAwesomeIcon icon={faMoon} />,
@@ -68,33 +68,33 @@ function Header() {
         {
           icon: <FontAwesomeIcon icon={faUser} />,
           title: 'Xem hồ sơ',
-          to: routeConfigs.profile,
+          to: configs.routes.profile,
         },
         {
           icon: <FontAwesomeIcon icon={faBookmark} />,
           title: 'Yêu thích',
-          to: routeConfigs.like,
+          to: configs.routes.like,
         },
         {
           icon: <FontAwesomeIcon icon={faCoins} />,
           title: 'Nhận xu',
-          to: routeConfigs.coin,
+          to: configs.routes.coin,
         },
         {
           icon: <img src={images.stream} alt="" />,
           title: 'LIVE Studio',
-          to: routeConfigs.live,
+          to: configs.routes.live,
         },
         {
           icon: <FontAwesomeIcon icon={faGear} />,
           title: 'Cài đặt',
-          to: routeConfigs.settings,
+          to: configs.routes.settings,
         },
         ...MENU_ITEMS,
         {
           icon: <FontAwesomeIcon icon={faSignOut} />,
           title: 'Đăng xuất',
-          to: routeConfigs.logout,
+          to: configs.routes.logout,
           separate: true,
         },
       ]
@@ -104,7 +104,7 @@ function Header() {
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
         <div className={cx('logo')}>
-          <Link to={routeConfigs.home}>
+          <Link to={configs.routes.home}>
             <img src={images.logo} alt="Tiktok logo" />
           </Link>
         </div>
@@ -132,7 +132,7 @@ function Header() {
             </>
           ) : (
             <>
-              <Button primary to={routeConfigs.login} target="blank">
+              <Button primary to={configs.routes.login} target="blank">
                 Log in
               </Button>
             </>

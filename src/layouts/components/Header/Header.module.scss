@@ -1,10 +1,18 @@
 .wrapper {
   --search-box-border: 92px;
   --search-btn-width: 52px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
   width: 100%;
   height: var(--default-layout-header-height);
+  background-color: var(--white);
   display: flex;
   justify-content: center;
+
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
 }
 
 .inner {
@@ -18,8 +26,6 @@
 
 .logo {
 }
-
-
 
 .action {
   display: flex;

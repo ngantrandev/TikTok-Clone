@@ -5,11 +5,11 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-import { Wrapper as WrapperPopper } from '../../../Popper';
-import AccountItem from '../../../AccountItem';
+import { Wrapper as WrapperPopper } from '../../../components/Popper';
+import AccountItem from '../../../components/AccountItem';
 import styles from './Search.module.scss';
-import { useDebounce as useDebounce } from '../../../../hooks';
-import * as searchService from '../../../../apiServices/searchService';
+import { useDebounce } from '../../../hooks';
+import * as searchService from '../../../services/searchService';
 
 const cx = classNames.bind(styles);
 
