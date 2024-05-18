@@ -1,6 +1,7 @@
-import React, { memo } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import styles from './Button.module.scss';
 
@@ -24,14 +25,18 @@ function Button({
 }) {
   let Comp = 'button';
 
-  const classes = cx('wrapper', {
-    primary,
-    outlined,
-    small,
-    large,
-    disabled,
-    rounded,
-  }, className);
+  const classes = cx(
+    'wrapper',
+    {
+      primary,
+      outlined,
+      small,
+      large,
+      disabled,
+      rounded,
+    },
+    className,
+  );
 
   const props = {
     onClick,
@@ -58,5 +63,22 @@ function Button({
     </Comp>
   );
 }
+
+Button.propTypes = {
+  to: PropTypes.string,
+  href: PropTypes.string,
+  leftIcon: PropTypes.node,
+  rightIcon: PropTypes.node,
+  primary: PropTypes.bool,
+  small: PropTypes.bool,
+  disabled: PropTypes.bool,
+  rounded: PropTypes.bool,
+  large: PropTypes.bool,
+  className: PropTypes.string,
+  outlined: PropTypes.string,
+  onClick: PropTypes.func,
+
+  children: PropTypes.node.isRequired,
+};
 
 export default Button;
