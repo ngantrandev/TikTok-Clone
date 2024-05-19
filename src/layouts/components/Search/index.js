@@ -16,7 +16,7 @@ const cx = classNames.bind(styles);
 function Search() {
   const [searchResult, setSearchResult] = useState([]);
   const [searchInputValue, setSearchInputValue] = useState('');
-  const [isFocusInput, setIsFocusInput] = useState(true);
+  const [isFocusInput, setIsFocusInput] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const debouncedValue = useDebounce(searchInputValue, 500);
 
