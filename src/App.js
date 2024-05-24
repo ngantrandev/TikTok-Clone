@@ -4,6 +4,7 @@ import { publicRoutes } from './routes';
 import { DefaultLayout } from './layouts';
 
 function App() {
+  console.log(process.env);
   return (
     <div className="App">
       <Routes>

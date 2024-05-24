@@ -32,7 +32,6 @@ function Search() {
 
     const fetchApi = async () => {
       const res = await searchService.searchUsers(debouncedValue);
-      console.log(res);
       setSearchResult(res);
       setIsSearching(false);
     };
@@ -41,7 +40,6 @@ function Search() {
   }, [debouncedValue]);
 
   const handleClickOutside = () => {
-    console.log('click outside');
     setIsFocusInput(false);
   };
 
@@ -72,9 +70,9 @@ function Search() {
         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
           <WrapperPopper>
             <h4 className={cx('search-title')}>Tài khoản</h4>
-            {searchResult.map((item) => (
-              <AccountItem key={item.id} data={item} />
-            ))}
+            {searchResult &&
+              searchResult.length > 0 &&
+              searchResult.map((item) => <AccountItem key={item.id} data={item} />)}
           </WrapperPopper>
         </div>
       )}

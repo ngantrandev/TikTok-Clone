@@ -58,7 +58,7 @@ const MENU_ITEMS = [
 
 function Header() {
   const handleChange = (item) => {
-    console.log(item);
+    // console.log(item);
   };
 
   const hasUser = true;

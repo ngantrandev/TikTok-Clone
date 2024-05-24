@@ -87,6 +87,48 @@
   bottom: 0;
   display: flex;
   justify-content: space-between;
+  color: var(--white);
+  align-items: center;
+}
+
+.play-btn {
+  left: 12px;
+  bottom: 12px;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  transition: opacity 0.3s ease;
+  margin-right: 10px;
+}
+
+.video-controller {
+  width: 100%;
+  height: 16px;
+  padding-inline: 12px;
+  position: absolute;
+  opacity: 1;
+
+  transition: opacity 0.3s ease 0s;
+  bottom: 14px;
+  cursor: initial;
+  display: flex;
+}
+
+.seekbar-container {
+  width: 100%;
+  height: 16px;
+  flex: 1 1 auto;
+  position: relative;
+}
+.slider {
+  height: 2px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.34);
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 // action button
