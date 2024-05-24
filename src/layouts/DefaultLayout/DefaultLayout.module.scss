@@ -3,12 +3,10 @@
   flex-direction: column;
   align-items: center;
   margin-top: var(--default-layout-header-height);
-  margin-top: calc(var(--default-layout-header-height) + 24px);
 }
 
 .container {
   width: var(--default-layout-width);
-  padding: 0 var(--default-layout-horizontal-spacer);
   display: flex;
 }
 

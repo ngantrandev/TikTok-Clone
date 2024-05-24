@@ -12,7 +12,7 @@ import Button from '../../../components/Button';
 import Menu from '../../../components/Popper/Menu';
 import { faBookmark, faKeyboard, faLightbulb, faMoon, faUser } from '@fortawesome/free-regular-svg-icons';
 import { MessageIcon, NotificationIcon, UploadIcon } from '../../../components/Icons';
-import Image from '../../../components/Images';
+import Image from '../../../components/Image';
 import Search from '../Search';
 import configs from '../../../configs/';
 

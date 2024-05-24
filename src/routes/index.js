@@ -1,25 +1,20 @@
 // pages
 import Home from '../components/pages/Home';
+import Live from '../components/pages/Live';
 import Fowllowing from '../components/pages/Following';
 import Profile from '../components/pages/Profile';
-import Upload from '../components/pages/Upload';
-import Search from '../components/pages/Search';
-import Live from '../components/pages/Live';
 
 // config
 import configs from '../configs';
-
-// layouts
-import { HeaderOnly } from '../layouts';
+import Login from '../components/pages/Login';
 
 const publicRoutes = [
   { path: configs.routes.home, component: Home },
   { path: '/home', component: Home },
   { path: configs.routes.following, component: Fowllowing },
   { path: configs.routes.profile, component: Profile },
-  { path: configs.routes.upload, component: Upload, layout: HeaderOnly },
-  { path: configs.routes.search, component: Search, layout: null },
   { path: configs.routes.live, component: Live },
+  { path: configs.routes.login, component: Login, layout: null },
 ];
 
 const privateRoutes = [];

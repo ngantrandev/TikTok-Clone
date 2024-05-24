@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 function MenuItem({ title, to, icon }) {
   return (
     <NavLink className={(nav) => cx('menu-item', { active: nav.isActive })} to={to}>
-      {icon}
+      <div className={cx('icon')}>{icon}</div>
       <span className={cx('title')}>{title}</span>
     </NavLink>
   );
